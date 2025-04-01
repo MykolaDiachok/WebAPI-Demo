@@ -1,32 +1,29 @@
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using WebApplication1.DB;
 
-namespace WebApplication1.Controllers;
-
-[ApiController]
-[Route("[controller]")]
-public class WeatherForecastController : ControllerBase
+namespace WebApplication1.Controllers
 {
-    private static readonly string[] Summaries = new[]
+    [Route("api/[controller]")]
+    [ApiController]
+    public class WeatherForecastController(ApplicationDbContext db) : ControllerBase
     {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
+        [HttpGet]
+        public async Task<IEnumerable<WeatherForecast>> Get()
+        {
+            return await db.WeatherForecasts
+                .OrderBy(w => w.Date)
+                .Take(5)
+                .ToListAsync();
+        }
 
-    private readonly ILogger<WeatherForecastController> _logger;
-
-    public WeatherForecastController(ILogger<WeatherForecastController> logger)
-    {
-        _logger = logger;
-    }
-
-    [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<WeatherForecast> Get()
-    {
-        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+        [HttpPost]
+        public async Task<IActionResult> Add(WeatherForecast forecast)
+        {
+            db.WeatherForecasts.Add(forecast);
+            await db.SaveChangesAsync();
+            return CreatedAtRoute("GetWeatherForecast", new { id = forecast.Id }, forecast);
+        }
     }
 }

@@ -4,25 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6323b339-6cb7-41f9-8f99-4f1c83ce1bf9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication1/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication1/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication1/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Controllers/WeatherForecastController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/DB/ApplicationDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/DB/DbInitializer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/WeatherForecast.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/WebApplication1.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/WebApplication1.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApplication1/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+    <list default="true" id="6323b339-6cb7-41f9-8f99-4f1c83ce1bf9" name="Changes" comment="init 2">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApplication1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApplication1/Docker/docker-compose.generated.override.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication1/Docker/docker-compose.generated.override.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication1/Controllers/WeatherForecastController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication1/Controllers/WeatherForecastOldController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication1/DB/DbInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication1/DB/DbInitializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication1/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication1/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication1/WeatherForecast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication1/WeatherForecast.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication1/WebApplication1.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication1/WebApplication1.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +26,7 @@
   <component name="KubernetesApiProvider"><![CDATA[{
   "isMigrated": true
 }]]></component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 1
 }]]></component>
@@ -47,7 +38,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Docker.docker-compose.yml.db: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Debug",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
@@ -177,15 +168,36 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1743493650010</updated>
-      <workItem from="1743493651216" duration="4731000" />
+      <workItem from="1743493651216" duration="7885000" />
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <option name="closed" value="true" />
+      <created>1743498541763</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1743498541764</updated>
+    </task>
+    <task id="LOCAL-00002" summary="init 2">
+      <option name="closed" value="true" />
+      <created>1743498579366</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1743498579366</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="init" />
+    <MESSAGE value="init 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="init 2" />
   </component>
 </project>

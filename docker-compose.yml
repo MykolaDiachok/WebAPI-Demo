@@ -8,7 +8,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
-      - ConnectionStrings__DefaultConnection=Server=db;Database=MyAppDb;User=sa;Password=Your_password123;
+      - ConnectionStrings__DefaultConnection=Server=db;Database=MyAppDb;User=sa;Password=Your_password123;Encrypt=True;TrustServerCertificate=True
     ports:
       - "8080:8080"
     depends_on:

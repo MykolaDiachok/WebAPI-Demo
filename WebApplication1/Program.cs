@@ -1,6 +1,9 @@
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using WebApplication1.Data;
+using WebApplication1.DB;
 
 
 namespace WebApplication1;
@@ -10,9 +13,18 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-
+        builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer(
+                builder.Configuration.GetConnectionString("DefaultConnection")));
         // Add services to the container.
-        builder.Services.AddHealthChecks().AddCheck("self", ()=>HealthCheckResult.Healthy("API is OK!"));
+        builder.Services.AddHealthChecks().AddCheck("self", ()=>HealthCheckResult.Healthy("API is OK!")).AddSqlServer(
+            builder.Configuration.GetConnectionString("DefaultConnection")!,
+            name: "sql",
+            timeout: TimeSpan.FromSeconds(3),
+            tags: ["db", "sql"],
+            failureStatus: HealthStatus.Unhealthy
+            );
+            
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
@@ -40,6 +52,12 @@ public class Program
         
         app.MapControllers();
 
+        using (var scope = app.Services.CreateScope())
+        {
+            var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+            DbInitializer.Initialize(db);
+        }
+        
         app.Run();
     }
 }
